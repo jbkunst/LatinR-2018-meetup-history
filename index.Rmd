@@ -54,6 +54,19 @@ theme_pres <- theme_jbk(
 theme_set(theme_pres)
 ```
 
+## . { data-background="https://polarnotion.github.io/starwarsintro/img/stars-bg.jpg" }
+
+<br>
+<br>
+<div style="text-align: left;">
+<span style="color: #4ee; font-size: 150%; font-weight:bold">
+Hace poco tiempo,<br>
+en una galaxia no tan lejana...
+</div>
+</span>
+
+
+
 ---- 
 
 Comenzó con **George Vega** en **1872**
@@ -70,9 +83,10 @@ Nah. Fue el **2013**
 
 ----
 
-**Hola**
+Partió con un **Hola**
 
 ![](static/imgs/mensaje.png)
+
 
 ## { data-background="https://i0.wp.com/ptech-llc.com/wp-content/uploads/2016/07/meetup-slide-3-background-1.jpg" } 
 
@@ -87,7 +101,10 @@ Nah. Fue el **2013**
 
 
 
-## Introducción al Uso de R
+## <span>
+<span style="font-size: 120%; font-family: 'Bangers', cursive;">Grupo de Usuarios de R en Chile</span><br>
+<span style="font-size: 80%; font-family: 'Special Elite', cursive;">Una historia contada a través de la experiencia y los datos</span><br><br>
+</span> 
 
 <big>
 `r icon::fa_globe(color = "#6cc644")` jkunst.com
@@ -96,6 +113,8 @@ Nah. Fue el **2013**
 
 `r icon::fa_github(color = "#333333")` @jbkunst
 
-`r icon::fa_linkedin(color = "#0077b5")` joshuakunst
-
 </big>
+
+
+
+
