@@ -1,0 +1,101 @@
+---
+title: false
+output:
+  revealjs::revealjs_presentation:
+    self_contained: false
+    lib_dir: libs
+    reveal_plugins: ["zoom"]
+    mathjax: null
+    transition: fade
+    css: ["static/css/styles.css", "static/css/custom.css"]
+    incremental: true
+    center: false
+    theme: simple
+    fig_width: 6
+    fig_height: 3.5
+    reveal_options:
+      slideNumber: true
+      controls: false
+      mouseWheel: false
+      minScale: 1.0
+      maxScale: 1.0
+editor_options: 
+  chunk_output_type: console
+---
+
+# <span>
+<span style="font-size: 120%; font-family: 'Bangers', cursive;">Grupo de Usuarios de R en Chile</span><br>
+<span style="font-size: 80%; font-family: 'Special Elite', cursive;">Una historia contada a través de la experiencia y los datos</span><br><br>
+<span style="font-size: 70%">Joshua Kunst | LatinR 2018</span>
+</span> { .center .white data-background="http://latin-r.com/img/sections-background/hero.jpg"}
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  dev = "svg",
+  cache = TRUE,
+  cache.path = ".cache/",
+  fig.path = "static/imgs/slides/",
+  fig.width = 11,
+  fig.height = 5
+)
+
+library(icon)
+library(jbkmisc)
+library(ggplot2)
+
+theme_pres <- theme_jbk(
+  base_family = "Roboto Condensed",
+  plot_margin = margin(5, 5, 5, 5)
+  ) + 
+  theme(legend.position = "none")
+
+theme_set(theme_pres)
+```
+
+---- 
+
+Comenzó con **George Vega** en **1872**
+
+![](static/imgs/gvegayon.png)
+
+----
+
+Nah. Fue el **2013**
+
+![](static/imgs/gvegayon.jpg)
+
+`r icon::fa_twitter(color = "#1da1f2")` @gvegayon
+
+----
+
+**Hola**
+
+![](static/imgs/mensaje.png)
+
+## { data-background="https://i0.wp.com/ptech-llc.com/wp-content/uploads/2016/07/meetup-slide-3-background-1.jpg" } 
+
+<br>
+<img 
+  width="70%"
+  style="background: none;"
+  src="https://secure.meetupstatic.com/s/img/5455565085016210254/logo/svg/logo--script.svg"
+/>
+
+# { data-background="static/imgs/end.gif" }
+
+
+
+## Introducción al Uso de R
+
+<big>
+`r icon::fa_globe(color = "#6cc644")` jkunst.com
+
+`r icon::fa_twitter(color = "#1da1f2")` @jbkunst
+
+`r icon::fa_github(color = "#333333")` @jbkunst
+
+`r icon::fa_linkedin(color = "#0077b5")` joshuakunst
+
+</big>
