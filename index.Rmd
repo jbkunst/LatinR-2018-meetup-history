@@ -113,15 +113,47 @@ Partió con un **Hola**
 />
 
 ```{r}
-ev2do <- events %>% 
-  filter(row_number() == 2) %>% 
-  pull(local_date) %>% 
-  format("%B del %Y")
+events <- events %>% 
+  mutate(date_format = format(local_date, "%B del %Y"))
+
+date_event <- function(n = 2) {
+  events %>% 
+    filter(row_number() == n) %>% 
+    pull(date_format)
+}
+
 ```
 
-## 5 Personas <br> `r ev2do` { .right .white data-background="static/imgs/highres_235491512.jpeg"} 
+## 1ra reunión - 6 Personas <br> `r date_event(2)` { .right .white data-background="static/imgs/highres_235491512.jpeg"} 
 
 ## Mensaje #1: comienzos toman tiempo { .right .white .center  data-background="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"} 
+
+## Poco a poco <br> `r date_event(3)`  { .right .white data-background="static/imgs/highres_361638302.jpeg"} 
+
+## Y así <br> `r date_event(8)`  { .left .white data-background="static/imgs/highres_365437502.jpeg"} 
+
+## Mensaje #2: { .left .center .white data-background="https://i.ytimg.com/vi/6AnAhdN9nDg/maxresdefault.jpg"} 
+
+## Resumiendo el primer ciclo
+
+```{r}
+members <- members %>% 
+  mutate(
+    joined2 = map_dbl(resource, ~ .x[["group_profile"]][["created"]]),
+    joined2 = as.POSIXct(joined2/1000, origin="1970-01-01")
+  ) %>% 
+  arrange(joined2) %>% 
+  mutate(
+    nacum = 1,
+    nacum = cumsum(nacum)
+  )
+
+members %>% 
+  
+ggplot() +
+  geom_line(data = members, aes(joined, nacum)) +
+  geom_vline(data = events, aes(xintercept = time)) 
+```
 
 
 ## { data-background="static/imgs/end.gif" }

@@ -12,3 +12,7 @@ glimpse(events)
 
 saveRDS(members, "data/members.rds")
 saveRDS(events, "data/events.rds")
+
+
+members <- readRDS("data/members.rds")
+events <- readRDS("data/events.rds")
