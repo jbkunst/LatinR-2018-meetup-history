@@ -38,17 +38,19 @@ knitr::opts_chunk$set(
   cache = TRUE,
   cache.path = ".cache/",
   fig.path = "static/imgs/slides/",
-  fig.width = 11,
-  fig.height = 5
+  fig.width = 13,
+  fig.height = 7
 )
 
 library(icon)
 library(jbkmisc)
 library(tidyverse)
+library(lubridate)
 
 theme_pres <- theme_jbk(
   base_family = "Roboto Condensed",
-  plot_margin = margin(5, 5, 5, 5)
+  plot_margin = margin(0, 0, 0, 0),
+  base_size = 17
   ) + 
   theme(legend.position = "none")
 
@@ -65,7 +67,7 @@ events <- meetupr::get_events("useRchile", "past")
 ```
 
 
-## . { data-background="https://polarnotion.github.io/starwarsintro/img/stars-bg.jpg" }
+## { data-background="static/imgs/stars-bg.jpg" }
 
 <br>
 <br>
@@ -132,9 +134,11 @@ date_event <- function(n = 2) {
 
 ## Y así <br> `r date_event(8)`  { .left .white data-background="static/imgs/highres_365437502.jpeg"} 
 
-## Mensaje #2: { .left .center .white data-background="https://i.ytimg.com/vi/6AnAhdN9nDg/maxresdefault.jpg"} 
+## Mensaje #2: { .left .center .white data-background="static/imgs/maxresdefault.jpg"} 
 
-## Resumiendo el primer ciclo
+----
+
+Resumiendo el primer **ciclo**
 
 ```{r}
 members <- members %>% 
@@ -148,17 +152,20 @@ members <- members %>%
     nacum = cumsum(nacum)
   )
 
-members %>% 
-  
-ggplot() +
-  geom_line(data = members, aes(joined, nacum)) +
-  geom_vline(data = events, aes(xintercept = time)) 
+p <- ggplot() +
+  geom_line(data = members, aes(as.Date(joined2), nacum), size = 2, color = "#543FFF") +
+  geom_vline(data = events, aes(xintercept = as.Date(time), color = as.numeric(time)), size  = 2, alpha = 0.3) +
+  scale_color_viridis_c(option = "B", direction = -1, end = 0.8) + 
+  labs(x = "Fecha", y = "Miembros") +
+  theme(axis.text = element_text(size = 12))
+
+p +
+  scale_x_date(limits = c(ymd(20130101), ymd(20150101)), date_labels = "%Y", breaks = "1 year") +
+  scale_y_continuous(limits = c(NA, 100))
 ```
 
 
 ## { data-background="static/imgs/end.gif" }
-
-
 
 ## <span>
 <span style="font-size: 120%; font-family: 'Bangers', cursive;">Grupo de Usuarios de R en Chile</span><br>
