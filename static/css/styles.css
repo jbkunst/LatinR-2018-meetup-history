@@ -26,6 +26,8 @@ body {
 .reveal .white > h2 { color: white; }
 .reveal .black > h1,
 .reveal .black > h2 { color: black; }
+.reveal .blued > h1,
+.reveal .blued > h2 { color: #13103e; }
 
 .reveal .left  > h1,
 .reveal .left  > h2 { text-align: left; }
