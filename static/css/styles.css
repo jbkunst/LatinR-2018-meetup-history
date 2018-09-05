@@ -26,6 +26,10 @@ body {
 .reveal .white > h2 { color: white; }
 .reveal .black > h1,
 .reveal .black > h2 { color: black; }
+.reveal .gray10 > h1,
+.reveal .gray10 > h2 { color: #1A1A1A;}
+.reveal .gray20 > h1,
+.reveal .gray20 > h2 { color: #333333;}
 .reveal .blued > h1,
 .reveal .blued > h2 { color: #13103e; }
 
