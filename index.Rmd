@@ -49,7 +49,7 @@ library(lubridate)
 
 theme_pres <- theme_jbk(
   base_family = "Roboto Condensed",
-  plot_margin = margin(1, 1, 1, 1),
+  # plot_margin = marginº(1, 1, 1, 1, unit = "pt"),
   base_size = 17
   ) + 
   theme(
